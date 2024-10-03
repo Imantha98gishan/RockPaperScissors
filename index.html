@@ -1,1 +1,65 @@
-
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Rock Paper Scissor
+        </title>
+        <meta charset="UTF-8">
+        <link href="./styles.css" rel="stylesheet">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <script>
+            console.log("Hello World");
+            humanScore=0;
+            computerScore=0;
+            const choices=["Rock","Paper","Scissor"];
+            function playRound(computerChoice,humanChoice){
+                console.log("Your Selection:",choices[humanChoice],"\nComputer Selection:",choices[computerChoice]);
+                if(computerChoice==0 && humanChoice==0){
+                    console.log("Draw");
+                }
+                else if(computerChoice==0 && humanChoice==1){
+                    console.log("You Won!");
+                }
+                else if(computerChoice==0 && humanChoice==2){
+                    console.log("Computer Won!");
+                }
+                else if(computerChoice==1 && humanChoice==0){
+                    console.log("Computer Won!");
+                }
+                else if(computerChoice==1 && humanChoice==1){
+                    console.log("Draw");
+                }
+                else if(computerChoice==1 && humanChoice==2){
+                    console.log("You Won!");
+                }
+                else if(computerChoice==2 && humanChoice==0){
+                    console.log("You Won!");
+                }
+                else if(computerChoice==2 && humanChoice==1){
+                    console.log("Computer Won!");
+                }
+                else if(computerChoice==2 && humanChoice==2){
+                    console.log("Draw");
+                }
+                else{
+                    return;
+                }
+            }
+            function getComputerChoice(){
+                let index=Math.floor(Math.random()*3);
+                return index;
+            }
+        
+            function getHumanChoice(){
+                let index=parseInt(prompt("Please enter the number between 0-2: "));
+                return index;
+            }
+            for(let i=0;i<5;i++){
+                playRound(getComputerChoice(),getHumanChoice());
+            }
+        </script>
+    </body>
+</html>
